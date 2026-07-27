@@ -31,9 +31,11 @@ COPY . .
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 RUN composer install --no-dev --optimize-autoloader
 
-# Set permissions for Laravel storage & cache
+# Set permissions for entrypoint and Laravel storage
+RUN chmod +x /var/www/html/docker-entrypoint.sh
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+ENTRYPOINT ["/var/www/html/docker-entrypoint.sh"]
+
