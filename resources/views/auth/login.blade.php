@@ -8,6 +8,19 @@
                 <div class="card">
                     <h3 class="card-header text-center">User Login</h3>
                     <div class="card-body">
+                        <!-- Demo Credentials Box -->
+                        <div class="alert alert-info border-0 shadow-sm mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <strong class="text-primary">🔑 Demo Admin Credentials</strong>
+                            </div>
+                            <small class="d-block text-dark"><strong>Email:</strong> <code>admin@test.com</code></small>
+                            <small class="d-block text-dark"><strong>Password:</strong> <code>password123</code></small>
+                            <hr class="my-2">
+                            <small class="text-muted d-block">
+                                💡 <em>Unable to log in with these credentials?</em> You can instantly <a href="{{ route('register-user') }}" class="fw-bold text-primary">create a new account here</a> in seconds!
+                            </small>
+                        </div>
+
                         <form method="POST" action="{{ route('login.custom') }}">
                             @csrf
                             <div class="form-group mb-3">
@@ -37,7 +50,8 @@
                                 <button type="submit" class="btn btn-dark btn-block">Signin</button>
                             </div>
                         </form>
-                        <a class="nav-link" href="{{ route('register-user') }}">Dont Have Account ? Create an Account Now</a>
+                        <a class="nav-link text-center mt-3" href="{{ route('register-user') }}">Don't Have An Account? Create an Account Now</a>
+
 
                     </div>
                 </div>
