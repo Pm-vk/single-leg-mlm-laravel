@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "SET NODE_OPTIONS=--openssl-legacy-provider && npm run development",
+        "development": "mix",
+        "watch": "SET NODE_OPTIONS=--openssl-legacy-provider && mix watch",
+        "watch-poll": "SET NODE_OPTIONS=--openssl-legacy-provider && mix watch -- --watch-options-poll=1000",
+        "hot": "SET NODE_OPTIONS=--openssl-legacy-provider && mix watch --hot",
+        "prod": "npm run production",
+        "production": "SET NODE_OPTIONS=--openssl-legacy-provider && mix --production"
+
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "bootstrap": "^4.6.0",
+        "jquery": "^3.6",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.16.1",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1"
+    }
+}
