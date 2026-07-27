@@ -16,12 +16,30 @@
 <link href="/assets/css/paper-dashboard.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style>
-    /* Fix dashboard stats card overflow & layout */
+    /* Global Universal Responsiveness Fixes */
+    html, body {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Make all tables horizontally scrollable on small screens */
+    .table-responsive, table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    
+    /* Card Layout & Metric Spacing */
+    .card {
+        margin-bottom: 20px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+    }
     .card .numbers {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
         text-align: right;
         word-break: break-word;
-        white-space: nowrap;
     }
     .card .numbers p {
         font-size: 11px !important;
@@ -29,23 +47,79 @@
         text-transform: uppercase;
         color: #9A9A9A;
         margin-bottom: 2px;
-        white-space: normal;
         line-height: 1.2;
     }
     .card .icon-big {
-        font-size: 2.5em !important;
-        min-height: 50px;
+        font-size: 2.2em !important;
+        min-height: 45px;
     }
     .card .icon-big i {
-        font-size: 40px !important;
+        font-size: 36px !important;
     }
     .card .content {
-        padding: 15px 15px 10px 15px !important;
+        padding: 15px !important;
     }
-    .sidebar .sidebar-wrapper {
-        overflow-x: hidden !important;
+
+    /* Navbar & Header Mobile Adjustments */
+    .navbar .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .navbar-brand {
+        font-size: 14px !important;
+        max-width: 180px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Mobile & Tablet Media Queries */
+    @media (max-width: 991px) {
+        .main-panel {
+            width: 100% !important;
+            float: none !important;
+        }
+        .sidebar {
+            display: none;
+        }
+        .nav-open .sidebar {
+            display: block !important;
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            width: 260px !important;
+            height: 100% !important;
+            z-index: 1050 !important;
+            background: #fff !important;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2) !important;
+        }
+        .card .numbers {
+            text-align: left !important;
+            margin-top: 10px;
+        }
+        .content {
+            padding: 15px 10px !important;
+        }
+        .cotainer, .container {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        h1, h2, h3, .h1, .h2, .h3 {
+            font-size: 1.4rem !important;
+        }
+        .btn {
+            width: 100% !important;
+            margin-bottom: 8px !important;
+        }
+        .form-control {
+            font-size: 14px !important;
+        }
     }
 </style>
+
 
 </head>
 
