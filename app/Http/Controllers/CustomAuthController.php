@@ -66,11 +66,13 @@ class CustomAuthController extends Controller
 
         // Create Epin record if missing
         DB::table('epins')->insertOrIgnore([
+            'user_id' => '1',
             'pin' => $data['epin'],
-            'amount' => $data['amount'],
+            'status' => 'Open',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+
         $check = $this->create($data, null);
 
         DirectIncome::create([
